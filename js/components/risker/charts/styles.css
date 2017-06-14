@@ -1,0 +1,5 @@
+.chart {
+    min-width: 100px;
+    max-width: 600px;
+    flex: 0 0 100%;
+}

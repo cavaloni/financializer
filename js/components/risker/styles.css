@@ -1,0 +1,16 @@
+.slider {
+    background: white;
+}
+
+.container {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    flex: 1;
+}
+
+.chart-box {
+    flex: 1 0 100%;
+}

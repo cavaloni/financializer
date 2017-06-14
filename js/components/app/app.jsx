@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import styles from './styles.css';
+import Title from '../title/title';
+import Risker from '../risker/risker';
+import BodyWrapper from '../body-wrapper/body-wrapper';
 
 export default class App extends Component {
   constructor(props) {
@@ -9,8 +12,13 @@ export default class App extends Component {
   render() {
     return (
       <div>
-        <h1>Hello Chads World!</h1>
-      </div>);
+        <Title />
+        <BodyWrapper>
+          <Risker></Risker>
+        </BodyWrapper>
+      </div>
+      
+      );
   }
 }
 
