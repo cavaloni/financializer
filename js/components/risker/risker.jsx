@@ -6,11 +6,16 @@ import Charts from './charts/charts'
 
 class Risker extends Component {
     constructor(props) {
-        
         super(props)
         this.state = {
             riskVal: 0
         }    
+    }
+
+    componentDidMount() {
+        if (!this.props.level) {
+            this.props.dispatch(actions.changeRiskLevel(1))
+        }
     }
 
     updateRisk(e) {
@@ -18,18 +23,22 @@ class Risker extends Component {
     }
 
     render() {
+        console.log(this.props.level);
         return (
             <div styleName="styles.container">
                 <h4>What is your preferred level of financial risk?</h4>
                 <input
                   styleName="styles.slider"
-                  type="range"  
-                  min="0" 
+                  type="range"
+                  min="1" 
                   max="10"
-                  value={this.props.level ? this.props.level : 0}
+                  value={this.props.level ? this.props.level : 1}
                   onChange={evt => this.updateRisk(evt)}
                   />
-                <Charts risk={this.props.level} />
+                <break></break>
+                <div styleName="chart-wrapper">
+                    <Charts risk={this.props.level} />
+                </div>
             </div>
         );
     }

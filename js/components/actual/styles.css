@@ -1,0 +1,13 @@
+.actual {
+  display: flex;
+  flex-direction: column;
+}
+
+.calculate {
+    margin-top: 20px;
+}
+
+.head {
+  margin: 0 auto;
+  margin-bottom: 20px;
+}

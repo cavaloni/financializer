@@ -3,4 +3,7 @@
     border: 2px solid gray;
     border-radius: 5px;
     display: flex;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
 }

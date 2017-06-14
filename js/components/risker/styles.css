@@ -8,9 +8,80 @@
     flex-direction: row;
     justify-content: space-around;
     flex-wrap: wrap;
-    flex: 1;
 }
 
-.chart-box {
-    flex: 1 0 100%;
+.chart-wrapper {
+    flex: 0 0 100%;
+}
+
+
+input[type=range] {
+  height: 20px;
+  -webkit-appearance: none;
+  margin: 6.35px 0;
+}
+input[type=range]:focus {
+  outline: none;
+}
+input[type=range]::-webkit-slider-runnable-track {
+  height: 5.3px;
+  cursor: pointer;
+  background: rgba(48, 113, 169, 0.78);
+  border-radius: 1.3px;
+}
+input[type=range]::-webkit-slider-thumb {
+  height: 18px;
+  width: 18px;
+  border-radius: 8px;
+  background: #ff857b;
+  cursor: pointer;
+  -webkit-appearance: none;
+  margin-top: -6.55px;
+}
+input[type=range]:focus::-webkit-slider-runnable-track {
+  background: rgba(110, 166, 214, 0.78);
+}
+input[type=range]::-moz-range-track {
+  height: 5.3px;
+  cursor: pointer;
+  background: rgba(48, 113, 169, 0.78);
+  border-radius: 1.3px;
+}
+input[type=range]::-moz-range-thumb {
+  border: 0px solid #00001e;
+  height: 18px;
+  width: 18px;
+  border-radius: 8px;
+  background: #ff857b;
+  cursor: pointer;
+}
+input[type=range]::-ms-track {
+  height: 5.3px;
+  cursor: pointer;
+  background: transparent;
+  border-color: transparent;
+  color: transparent;
+}
+input[type=range]::-ms-fill-lower {
+  background: rgba(24, 57, 86, 0.78);
+  border-radius: 2.6px;
+}
+input[type=range]::-ms-fill-upper {
+  background: rgba(48, 113, 169, 0.78);
+  border-radius: 2.6px;
+}
+input[type=range]::-ms-thumb {
+  border: 0px solid #00001e;
+  height: 18px;
+  width: 18px;
+  border-radius: 8px;
+  background: #ff857b;
+  cursor: pointer;
+  height: 5.3px;
+}
+input[type=range]:focus::-ms-fill-lower {
+  background: rgba(48, 113, 169, 0.78);
+}
+input[type=range]:focus::-ms-fill-upper {
+  background: rgba(110, 166, 214, 0.78);
 }

@@ -1,5 +1,6 @@
 const initialState = {
-  level: 0,
+  level: 1,
+  actNums: {},
 };
 
 export const appReducer = (state = initialState, action) => {
@@ -9,6 +10,13 @@ export const appReducer = (state = initialState, action) => {
         ...state,
         level: action.level,
       };
+    
+    case 'UPDATE_ACTUAL_NUMBERS':
+      return {
+        ...state,
+        actNums: action.actNums,
+      };
+
     default:
       return {};
   }
