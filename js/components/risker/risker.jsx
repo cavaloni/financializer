@@ -8,7 +8,7 @@ class Risker extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            riskVal: 0
+            riskVal: 1
         }    
     }
 
@@ -19,6 +19,7 @@ class Risker extends Component {
     }
 
     updateRisk(e) {
+        this.setState({ riskVal: e.target.value })
         this.props.dispatch(actions.changeRiskLevel(e.target.value))
     }
 
@@ -32,12 +33,12 @@ class Risker extends Component {
                   type="range"
                   min="1" 
                   max="10"
-                  value={this.props.level ? this.props.level : 1}
+                  value={this.state.riskVal}
                   onChange={evt => this.updateRisk(evt)}
                   />
                 <break></break>
                 <div styleName="chart-wrapper">
-                    <Charts risk={this.props.level} />
+                    <Charts risk={this.state.riskVal} />
                 </div>
             </div>
         );

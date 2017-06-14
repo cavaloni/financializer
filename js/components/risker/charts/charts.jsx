@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-import mockVals from './mock-values.js';
 import { Doughnut } from 'react-chartjs';
 const ReactHighcharts = require('react-highcharts');
 import styles from './styles.css';
+import * as actions from '../../../actions/index.js';
+import { connect } from 'react-redux';
 // something
 
 class Charts extends Component {
@@ -20,13 +21,17 @@ class Charts extends Component {
   }
 
   componentWillReceiveProps(nextProps) {
+    if (!this.props.riskLevels) {
+        this.getPercentages(nextProps);
+    }
     if (nextProps.risk !== this.props.risk) {
       this.getPercentages(nextProps);
     }
   }
 
   getPercentages(props) {
-    this.setState({ dataSet: mockVals[props.risk] });
+      console.log(props);
+    this.setState({ dataSet: props.riskLevels });
   }
 
   render() {
@@ -120,4 +125,8 @@ Charts.propTypes = {
   risk: React.PropTypes.number.isRequired,
 };
 
-export default Charts;
+const mapStateToProps = (state, props) => ({
+  riskLevels: state.riskLevels,
+})
+
+export default connect(mapStateToProps)(Charts);

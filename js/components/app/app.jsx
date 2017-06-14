@@ -4,6 +4,7 @@ import Title from '../title/title';
 import Risker from '../risker/risker';
 import BodyWrapper from '../body-wrapper/body-wrapper';
 import Actual from '../actual/actual';
+import Adjuster from '../actual/adjuster/adjuster'
 
 export default class App extends Component {
   constructor(props) {
@@ -18,6 +19,8 @@ export default class App extends Component {
           <Risker/>
           <break/>
           <Actual/>
+          <break/>
+          <Adjuster/>
         </BodyWrapper>
       </div>
       
