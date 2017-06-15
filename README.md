@@ -10,6 +10,10 @@ Clone locally:
 
 Then
 
+`npm install` 
+
+&&
+
 `npm run dev-build`
 
 Then open a browser and visit `localhost:8081`
