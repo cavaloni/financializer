@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import styles from './numbers-input.css';
+import styles from './styles.css';
 
 class NumbersInput extends Component {
   constructor(props) {
@@ -41,7 +41,7 @@ class NumbersInput extends Component {
 NumbersInput.propTypes = {
   invType: React.PropTypes.string.isRequired,
   numCallBack: React.PropTypes.func.isRequired,
-  getNums: React.PropTypes.bool.isRequired,
+  getNums: React.PropTypes.bool.isRequired, // eslint-disable-line
 };
 
 export default NumbersInput;

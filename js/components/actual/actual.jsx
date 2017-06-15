@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import NumbersInput from './numbers-input/numbers-input';
-import * as actions from '../../actions/index.js';
+import * as actions from '../../actions/index';
 import styles from './styles.css';
 
 class Actual extends Component {
@@ -37,7 +37,7 @@ class Actual extends Component {
   triggerCollectNums() {
     this.setState({ getNums: true }, () => { this.saveState(); });
   }
-//word
+// word
   render() {
     return (
       <div styleName="styles.actual">
@@ -54,5 +54,9 @@ class Actual extends Component {
     );
   }
 }
+
+Actual.propTypes = {
+  dispatch: React.PropTypes.func.isRequired,
+};
 
 export default connect()(Actual);

@@ -28,15 +28,17 @@ class Risker extends Component {
         return (
             <div styleName="styles.container">
                 <h4>What is your preferred level of financial risk?</h4>
-                <h4 styleName="styles.risk-val">{this.state.riskVal}</h4>
-                <input
-                  styleName="styles.slider"
-                  type="range"
-                  min="1" 
-                  max="10"
-                  value={this.state.riskVal}
-                  onChange={evt => this.updateRisk(evt)}
-                  />
+                <div styleName="styles.slide-num">
+                    <h4 styleName="styles.risk-val">{this.state.riskVal}</h4>
+                    <input
+                    styleName="styles.slider"
+                    type="range"
+                    min="1" 
+                    max="10"
+                    value={this.state.riskVal}
+                    onChange={evt => this.updateRisk(evt)}
+                    />
+                </div>
                 <break></break>
                 <div styleName="chart-wrapper">
                     <Charts risk={this.state.riskVal} />
@@ -45,7 +47,7 @@ class Risker extends Component {
         );
     }
 }
-
+//break
 const mapStateToProps = (state, props) => ({
     level: state.level,
 })

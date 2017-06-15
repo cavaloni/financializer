@@ -25,7 +25,3 @@ export default class App extends Component {
       );
   }
 }
-
-// App.propTypes = {
-//   children: React.PropTypes.node.isRequired,
-// };

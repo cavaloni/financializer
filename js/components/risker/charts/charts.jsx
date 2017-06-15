@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
-import { Doughnut } from 'react-chartjs';
-const ReactHighcharts = require('react-highcharts');
-import styles from './styles.css';
-import * as actions from '../../../actions/index.js';
 import { connect } from 'react-redux';
-// something
+import * as actions from '../../../actions/index';
+import styles from './styles.css';
+
+const ReactHighcharts = require('react-highcharts');
 
 class Charts extends Component {
   constructor(props) {
@@ -18,9 +17,9 @@ class Charts extends Component {
 
   componentDidMount() {
     if (!this.props.riskLevels) {
-        this.props.dispatch(actions.changeRiskLevel(1));
+      this.props.dispatch(actions.changeRiskLevel(1));
     } else {
-        this.getPercentages(this.props);
+      this.getPercentages(this.props);
     }
   }
 
@@ -46,7 +45,6 @@ class Charts extends Component {
   }
 
   render() {
-    console.log(this.state);
     const chartOptions = {
       chart: {
         plotBackgroundColor: null,
@@ -54,6 +52,9 @@ class Charts extends Component {
         plotShadow: false,
         backgroundColor: 'rgba(0, 0, 0, 0)',
         margin: [0, 0, 0, 0],
+        style: {
+          overflow: 'hidden',
+        },
       },
       colors: ['#5035F7', '#7265C4', '#9E9488', '#C48C65', '#9E7671'],
       title: {
@@ -64,6 +65,9 @@ class Charts extends Component {
       },
       tooltip: {
         pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>',
+      },
+      scrollbar: {
+        enabled: false,
       },
       plotOptions: {
         pie: {
@@ -138,9 +142,11 @@ class Charts extends Component {
 
 Charts.propTypes = {
   risk: React.PropTypes.number.isRequired,
+  riskLevels: React.PropTypes.arrayOf(React.PropTypes.number).isRequired,
+  dispatch: React.PropTypes.func.isRequired,
 };
 
-const mapStateToProps = (state, props) => ({
+const mapStateToProps = (state, props) => ({ // eslint-disable-line
   riskLevels: state.riskLevels,
 });
 

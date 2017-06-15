@@ -16,7 +16,7 @@ export const appReducer = (state = initialState, action) => {
         ...state,
         riskLevels: action.riskLevels,
       };
-    
+
     case 'UPDATE_ACTUAL_NUMBERS':
       return {
         ...state,
@@ -26,4 +26,4 @@ export const appReducer = (state = initialState, action) => {
     default:
       return {};
   }
-}
+};

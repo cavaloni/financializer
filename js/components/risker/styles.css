@@ -11,8 +11,13 @@
     flex: 0 0 100%;
 }
 
+.slide-num {
+    display: flex;
+    flex-direction: row;
+}
+
 .risk-val {
-    align-self: flex-end;
+    margin: 6px;
 }
 
 .slider {
@@ -40,7 +45,7 @@
   margin-top: -6.55px;
 }
 .slider:focus::-webkit-slider-runnable-track {
-  background: rgba(110, 166, 214, 0.78);
+  background: #9e7671;
 }
 .slider::-moz-range-track {
   height: 5.3px;

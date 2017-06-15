@@ -4,13 +4,10 @@ import Move from './move/move';
 import styles from './styles.css';
 
 class Adjuster extends Component {
-  constructor(props) {
-    super(props);
-  }
 
   calculateMoves(actNums) {
     let total = 0;
-    for (const num in actNums) {
+    for (const num in actNums) { // eslint-disable-line
       total += actNums[num];
     }
 
@@ -94,7 +91,18 @@ class Adjuster extends Component {
   }
 }
 
-const mapStateToProps = (state, props) => ({
+Adjuster.propTypes = {
+  riskLevels: React.PropTypes.arrayOf(React.PropTypes.number).isRequired,
+  actNums: React.PropTypes.shape({
+    cash: React.PropTypes.number,
+    bonds: React.PropTypes.number,
+    stocks: React.PropTypes.number,
+    gold: React.PropTypes.number,
+    annuities: React.PropTypes.number,
+  }).isRequired,
+};
+
+const mapStateToProps = (state, props) => ({ // eslint-disable-line
   actNums: state.actNums,
   riskLevels: state.riskLevels,
 });
