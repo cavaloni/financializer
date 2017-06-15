@@ -1,7 +1,7 @@
 .mover {
     margin: 20px;
     border-bottom: 1px solid transparent;
-    border-image: linear-gradient(to right, #5035f7 0%, #7265c4 60%, #46638f 61%, #7265c4 100%);
+    border-image: linear-gradient(to right, #5035f7 0%, #7265c4 60%, #46638f 61%, #c48c65 100%);
     border-image-slice: 1;
     padding: 7px;
 }

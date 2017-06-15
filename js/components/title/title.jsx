@@ -5,7 +5,7 @@ const Title = function() {
     return (
         <div styleName="styles.title-bar">
             <h3 styleName="styles.heading">Financializer</h3>
-            <h1 styleName="styles.sub-title">Forging your financial future</h1>
+            <h1 styleName="styles.sub-title">Forging Your Financial Future</h1>
         </div>
     )
 }
