@@ -37,26 +37,18 @@ class Adjuster extends Component {
         const i = deficits.length === 1 ? 0 : deficits.length - 1;
         if (deficits[i]) {
           const currentDeficit = deficits[i][0];
-          while (currentDeficit < 0) {
-            if (amt[0] === 0) {
-              break;
-            }
-            if (amt[0] + currentDeficit > 0) {
-              moves.push([deficits[i][1], amt[1], Math.abs(currentDeficit)]);
-              amt[0] += currentDeficit;
-              deficits.pop();
-              break;
-            } else if (amt[0] + currentDeficit < 0) {
-              moves.push([deficits[i][1], amt[1], amt[0]]);
-              deficits[i][0] += amt[0];
-              amt[0] = 0;
-              break;
-            } else {
-              moves.push([deficits[i][1], amt[1], amt[0]]);
-              amt[0] += currentDeficit;
-              deficits.pop();
-              break;
-            }
+          if (amt[0] + currentDeficit > 0) {
+            moves.push([deficits[i][1], amt[1], Math.abs(currentDeficit)]);
+            amt[0] += currentDeficit;
+            deficits.pop();
+          } else if (amt[0] + currentDeficit < 0) {
+            moves.push([deficits[i][1], amt[1], amt[0]]);
+            deficits[i][0] += amt[0];
+            amt[0] = 0;
+          } else {
+            moves.push([deficits[i][1], amt[1], amt[0]]);
+            amt[0] += currentDeficit;
+            deficits.pop();
           }
         }
       }
@@ -70,15 +62,15 @@ class Adjuster extends Component {
       moves = this.calculateMoves(this.props.actNums);
     }
 
-    let movesDisplay = moves.map(move => (
-      <Move from={move[1]} to={move[0]} amount={move[2]} key={moves.indexOf(move)} />
-    ));
-
+    let movesDisplay;
     let head;
     if (!moves.length) {
       movesDisplay = <div />;
       head = <div />;
     } else {
+      movesDisplay = moves.map(move => (
+        <Move from={move[1]} to={move[0]} amount={move[2]} key={moves.indexOf(move)} />
+      ));
       head = <h2>Suggested transfers to match risk level</h2>;
     }
 

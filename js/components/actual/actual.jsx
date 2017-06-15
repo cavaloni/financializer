@@ -23,7 +23,7 @@ class Actual extends Component {
     this.setState({ [invType]: Number(e), getNums: false });
   }
 
-  saveState() {
+  pushActuals() {
     const actNums = {
       cash: this.state.cash,
       bonds: this.state.bonds,
@@ -35,7 +35,7 @@ class Actual extends Component {
   }
 
   triggerCollectNums() {
-    this.setState({ getNums: true }, () => { this.saveState(); });
+    this.setState({ getNums: true }, () => { this.pushActuals(); });
   }
 // word
   render() {
