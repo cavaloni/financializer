@@ -1,10 +1,19 @@
 .actual {
   display: flex;
   flex-direction: column;
+  padding: 20px;
 }
 
 .calculate {
-    margin-top: 20px;
+    box-shadow: 2px 2px 10px rgba(10, 10, 10, .2);
+    font-family: 'Raleway', sans-serif;
+    background: #46638f;
+    border: none;
+    width: 100px;
+    height: 30px;
+    margin: 10px auto;
+    font-size: 15px;
+    color: white;
 }
 
 .head {

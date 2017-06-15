@@ -13,13 +13,11 @@ export default class App extends Component {
 
   render() {
     return (
-      <div>
+      <div styleName="styles.app">
         <Title />
         <BodyWrapper>
           <Risker/>
-          <break/>
           <Actual/>
-          <break/>
           <Adjuster/>
         </BodyWrapper>
       </div>

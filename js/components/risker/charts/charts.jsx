@@ -41,9 +41,11 @@ class Charts extends Component {
         plotBackgroundColor: null,
         plotBorderWidth: 0,
         plotShadow: false,
+        backgroundColor: 'rgba(0, 0, 0, 0)',
+        margin: [0, 0, 0, 0],
       },
       title: {
-        text: 'Browser<br>shares<br>2015',
+        text: 'Wealth<br>distribution',
         align: 'center',
         verticalAlign: 'middle',
         y: 40,
@@ -53,6 +55,7 @@ class Charts extends Component {
       },
       plotOptions: {
         pie: {
+          borderWidth: 0,
           dataLabels: {
             enabled: true,
             distance: -50,
@@ -98,7 +101,7 @@ class Charts extends Component {
       },
       series: [{
         type: 'pie',
-        name: 'Browser share',
+        name: 'Wealth Distribution',
         innerSize: '50%',
         data: [
           ...this.state.dataSet,

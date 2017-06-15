@@ -1,13 +1,10 @@
-.slider {
-    background: white;
-}
-
 .container {
     align-items: center;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     flex-wrap: wrap;
+    flex: 1 0 65%
 }
 
 .chart-wrapper {
@@ -15,21 +12,22 @@
 }
 
 
-input[type=range] {
+.slider {
   height: 20px;
   -webkit-appearance: none;
   margin: 6.35px 0;
+  background: transparent;
 }
-input[type=range]:focus {
+.slider:focus {
   outline: none;
 }
-input[type=range]::-webkit-slider-runnable-track {
+.slider::-webkit-slider-runnable-track {
   height: 5.3px;
   cursor: pointer;
   background: rgba(48, 113, 169, 0.78);
   border-radius: 1.3px;
 }
-input[type=range]::-webkit-slider-thumb {
+.slider::-webkit-slider-thumb {
   height: 18px;
   width: 18px;
   border-radius: 8px;
@@ -38,16 +36,16 @@ input[type=range]::-webkit-slider-thumb {
   -webkit-appearance: none;
   margin-top: -6.55px;
 }
-input[type=range]:focus::-webkit-slider-runnable-track {
+.slider:focus::-webkit-slider-runnable-track {
   background: rgba(110, 166, 214, 0.78);
 }
-input[type=range]::-moz-range-track {
+.slider::-moz-range-track {
   height: 5.3px;
   cursor: pointer;
   background: rgba(48, 113, 169, 0.78);
   border-radius: 1.3px;
 }
-input[type=range]::-moz-range-thumb {
+.slider::-moz-range-thumb {
   border: 0px solid #00001e;
   height: 18px;
   width: 18px;
@@ -55,22 +53,22 @@ input[type=range]::-moz-range-thumb {
   background: #ff857b;
   cursor: pointer;
 }
-input[type=range]::-ms-track {
+.slider::-ms-track {
   height: 5.3px;
   cursor: pointer;
   background: transparent;
   border-color: transparent;
   color: transparent;
 }
-input[type=range]::-ms-fill-lower {
+.slider::-ms-fill-lower {
   background: rgba(24, 57, 86, 0.78);
   border-radius: 2.6px;
 }
-input[type=range]::-ms-fill-upper {
+.slider::-ms-fill-upper {
   background: rgba(48, 113, 169, 0.78);
   border-radius: 2.6px;
 }
-input[type=range]::-ms-thumb {
+.slider::-ms-thumb {
   border: 0px solid #00001e;
   height: 18px;
   width: 18px;
@@ -79,9 +77,9 @@ input[type=range]::-ms-thumb {
   cursor: pointer;
   height: 5.3px;
 }
-input[type=range]:focus::-ms-fill-lower {
+.slider:focus::-ms-fill-lower {
   background: rgba(48, 113, 169, 0.78);
 }
-input[type=range]:focus::-ms-fill-upper {
+.slider:focus::-ms-fill-upper {
   background: rgba(110, 166, 214, 0.78);
 }

@@ -1,4 +1,11 @@
 .title-bar {
     height: 100px;
-    background: blue;
+    background: white;
+}
+
+.heading {
+    font-family: 'Open Sans Condensed', sans-serif;
+    margin: 20px;
+    font-size: 40px;
+    color: #5095cb;
 }

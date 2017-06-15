@@ -39,23 +39,21 @@ class Adjuster extends Component {
       while (amt[0] > 0) {
         const i = deficits.length === 1 ? 0 : deficits.length - 1;
         if (deficits[i]) {
-          let currentDeficit = deficits[i][0];
+          const currentDeficit = deficits[i][0];
           while (currentDeficit < 0) {
             if (amt[0] === 0) {
               break;
             }
             if (amt[0] + currentDeficit > 0) {
               moves.push([deficits[i][1], amt[1], Math.abs(currentDeficit)]);
-              const amtCopy = amt[0];
               amt[0] += currentDeficit;
               deficits.pop();
               break;
             } else if (amt[0] + currentDeficit < 0) {
               moves.push([deficits[i][1], amt[1], amt[0]]);
-              const difference = amt[0] + currentDeficit;
-              const amtToAdd = currentDeficit - difference;
-              amt[0] += amtToAdd;
-              currentDeficit -= amtToAdd;
+              deficits[i][0] += amt[0];
+              amt[0] = 0;
+              break;
             } else {
               moves.push([deficits[i][1], amt[1], amt[0]]);
               amt[0] += currentDeficit;
@@ -79,12 +77,17 @@ class Adjuster extends Component {
       <Move from={move[1]} to={move[0]} amount={move[2]} key={moves.indexOf(move)} />
     ));
 
+    let head;
     if (!moves.length) {
       movesDisplay = <div />;
+      head = <div />;
+    } else {
+      head = <h2>Suggested transfers to match risk level</h2>;
     }
 
     return (
       <div styleName="styles.movesList">
+        {head}
         { movesDisplay }
       </div>
     );

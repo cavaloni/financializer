@@ -1,9 +1,12 @@
 .main {
     margin: 20px;
-    border: 2px solid gray;
-    border-radius: 5px;
+    border-radius: 2px;
     display: flex;
     justify-content: center;
     flex-direction: row;
     flex-wrap: wrap;
+    box-shadow: 0 9px 22px 0 rgba(0, 0, 0, .15);
+    background-color: hsla(0, 0%, 100%, .2);
+    color: white;
+    font-family: 'Raleway', sans-serif;
 }

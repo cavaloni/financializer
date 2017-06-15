@@ -1,5 +1,8 @@
 .actual-numbers {
-  
+    border: none;
+    background-color: hsla(0, 0%, 100%, .2);
+    margin-bottom: 10px;
+    box-shadow: 2px 2px 10px rgba(10, 10, 10, .2);
 }
 
 .input-container {

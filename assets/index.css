@@ -13,3 +13,8 @@ break{
   height: 0px; 
   overflow: hidden;
 }
+
+#app {
+    background-image: radial-gradient(circle farthest-corner at 50% 50%, #6a86b1, #596f91);
+    height: 100vh;
+}
