@@ -14,7 +14,15 @@
     margin: 10px auto;
     font-size: 15px;
     color: white;
+    cursor: pointer;
+    transition: 0.3s;
 }
+
+.calculate:hover {
+    background: #9E7671
+}
+
+
 
 .head {
   margin: 0 auto;

@@ -5,6 +5,12 @@
     box-shadow: 2px 2px 10px rgba(10, 10, 10, .2);
 }
 
+.actual-numbers::-webkit-inner-spin-button, 
+.actual-numbers::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+
 .input-container {
     display: flex;
     justify-content: space-between;

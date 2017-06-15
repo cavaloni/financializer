@@ -11,6 +11,9 @@
     flex: 0 0 100%;
 }
 
+.risk-val {
+    align-self: flex-end;
+}
 
 .slider {
   height: 20px;

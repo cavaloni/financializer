@@ -17,12 +17,16 @@ class Charts extends Component {
   }
 
   componentDidMount() {
-    this.getPercentages(this.props);
+    if (!this.props.riskLevels) {
+        this.props.dispatch(actions.changeRiskLevel(1));
+    } else {
+        this.getPercentages(this.props);
+    }
   }
 
   componentWillReceiveProps(nextProps) {
     if (!this.props.riskLevels) {
-        this.getPercentages(nextProps);
+      this.getPercentages(nextProps);
     }
     if (nextProps.risk !== this.props.risk) {
       this.getPercentages(nextProps);
@@ -30,12 +34,19 @@ class Charts extends Component {
   }
 
   getPercentages(props) {
-      console.log(props);
-    this.setState({ dataSet: props.riskLevels });
+    const invCategories = ['cash', 'bonds', 'stocks', 'gold', 'annuities'];
+    const levelsAndNames = [];
+    for (let i = 0; i < props.riskLevels.length; i += 1) {
+      levelsAndNames[i] = {
+        y: props.riskLevels[i],
+        name: invCategories[i],
+      };
+    }
+    this.setState({ dataSet: levelsAndNames });
   }
 
   render() {
-      console.log(this.state);
+    console.log(this.state);
     const chartOptions = {
       chart: {
         plotBackgroundColor: null,
@@ -44,6 +55,7 @@ class Charts extends Component {
         backgroundColor: 'rgba(0, 0, 0, 0)',
         margin: [0, 0, 0, 0],
       },
+      colors: ['#5035F7', '#7265C4', '#9E9488', '#C48C65', '#9E7671'],
       title: {
         text: 'Wealth<br>distribution',
         align: 'center',
@@ -60,8 +72,8 @@ class Charts extends Component {
             enabled: true,
             distance: -50,
             style: {
-              fontWeight: 'bold',
-              color: 'white',
+              color: 'black',
+              textOutline: 'none',
             },
           },
           startAngle: -90,
@@ -130,6 +142,6 @@ Charts.propTypes = {
 
 const mapStateToProps = (state, props) => ({
   riskLevels: state.riskLevels,
-})
+});
 
 export default connect(mapStateToProps)(Charts);

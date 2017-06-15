@@ -28,6 +28,7 @@ class Risker extends Component {
         return (
             <div styleName="styles.container">
                 <h4>What is your preferred level of financial risk?</h4>
+                <h4 styleName="styles.risk-val">{this.state.riskVal}</h4>
                 <input
                   styleName="styles.slider"
                   type="range"
